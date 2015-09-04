@@ -8,14 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef POS_DISABLE_ALLOCATION_TRACKING
+#ifdef DEBUG
 
 @interface NSObject (POSAllocationTracker)
-
-+ (id)pos_trackingAlloc;
-
 @end
 
-#else
-#   define pos_trackingAlloc alloc
 #endif

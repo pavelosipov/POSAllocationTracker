@@ -10,20 +10,25 @@
 #import "AllocationTracker.h"
 #import <objc/runtime.h>
 
-#ifndef POS_DISABLE_ALLOCATION_TRACKING
+#ifdef DEBUG
+
+inline void POSSwapSelectors(Class aClass, SEL originalSelector, SEL trackingSelector) {
+    Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
+    assert(originalMethod != NULL);
+    Method trackingMethod = class_getInstanceMethod(aClass, trackingSelector);
+    method_exchangeImplementations(originalMethod, trackingMethod);
+}
 
 @implementation NSObject (POSAllocationTracker)
 
 + (void)load {
-    Method originalDealloc = class_getInstanceMethod(self, sel_getUid("dealloc"));
-    NSParameterAssert(originalDealloc != NULL);
-    Method trackingDealloc = class_getInstanceMethod(self, @selector(pos_trackingDealloc));
-    method_exchangeImplementations(originalDealloc, trackingDealloc);
+    POSSwapSelectors(self, @selector(init), @selector(pos_trackingInit));
+    POSSwapSelectors(self, sel_getUid("dealloc"), @selector(pos_trackingDealloc));
 }
 
-+ (id)pos_trackingAlloc {
-    id object = [self alloc];
-    pos::AllocationTracker::tracker().incrementInstanceCountForClass(self);
+- (instancetype)pos_trackingInit {
+    id object = [self pos_trackingInit];
+    pos::AllocationTracker::tracker().incrementInstanceCountForClass([self class]);
     return object;
 }
 

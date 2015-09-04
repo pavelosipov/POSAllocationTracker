@@ -7,10 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
-#define POS_DISABLE_ALLOCATION_TRACKING
 #import "POSAllocationTracker.h"
-
 
 @interface Dummy : NSObject
 @end
@@ -27,7 +24,7 @@
 - (void)testInstanceCounterCorrectness {
     XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 0);
     @autoreleasepool {
-        __unused Dummy *dummy = [[Dummy pos_trackingAlloc] init];
+        __unused Dummy *dummy = [Dummy new];
         XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 1);
     }
     XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 0);
