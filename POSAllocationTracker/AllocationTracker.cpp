@@ -8,7 +8,6 @@
 
 #include "AllocationTracker.h"
 #include <stdlib.h>
-#include <iostream>
 
 namespace pos {
 
@@ -24,20 +23,26 @@ AllocationTracker &AllocationTracker::tracker() {
 
 AllocationTracker::AllocationTracker() {}
     
+uint64_t AllocationTracker::instanceCountForClass(Class aClass) {
+    std::lock_guard<std::mutex> lock(snapshotMutex_);
+    auto snapshotEntry = snapshot_.find(aClass);
+    if (snapshotEntry != snapshot_.end()) {
+        return snapshotEntry->second;
+    }
+    return 0;
+}
+    
 void AllocationTracker::incrementInstanceCountForClass(Class aClass) {
-    std::cout << "++" << class_getName(aClass) << std::endl;
     std::lock_guard<std::mutex> lock(snapshotMutex_);
     ++snapshot_[aClass];
 }
 
 void AllocationTracker::decrementInstanceCountForClass(Class aClass) {
-    std::cout << "--" << class_getName(aClass) << std::endl;
     std::lock_guard<std::mutex> lock(snapshotMutex_);
-    --snapshot_[aClass];
-}
-    
-AllocationTracker::Snapshot const &AllocationTracker::snapshot() const {
-    return snapshot_;
+    auto snapshotEntry = snapshot_.find(aClass);
+    if (snapshotEntry != snapshot_.end()) {
+        --snapshotEntry->second;
+    }
 }
 
 }

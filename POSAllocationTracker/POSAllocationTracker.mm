@@ -9,17 +9,12 @@
 #import "POSAllocationTracker.h"
 #import "NSObject+POSAllocationTracker.h"
 #import "AllocationTracker.h"
-#import <iostream>
 #import <objc/runtime.h>
 
 @implementation POSAllocationTracker
 
-+ (void)printSnapshot {
-    for (auto snapshotEntry : pos::AllocationTracker::tracker().snapshot()) {
-        if (snapshotEntry.second > 0) {
-            NSLog(@"%s: %@", class_getName(snapshotEntry.first), @(snapshotEntry.second));
-        }
-    }
++ (uint64_t)instanceCountForClass:(Class)aClass {
+    return pos::AllocationTracker::tracker().instanceCountForClass(aClass);
 }
 
 @end

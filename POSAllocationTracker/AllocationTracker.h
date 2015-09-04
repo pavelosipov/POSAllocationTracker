@@ -27,12 +27,11 @@ public:
     AllocationTracker& operator=(const AllocationTracker&) = delete;
     
     static AllocationTracker &tracker();
-        
+    
+    uint64_t instanceCountForClass(Class aClass);
     void incrementInstanceCountForClass(Class aClass);
     void decrementInstanceCountForClass(Class aCls);
-    
-    Snapshot const &snapshot() const;
-    
+        
 private:
     AllocationTracker();
     static Snapshot buildInitialSnapshot();

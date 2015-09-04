@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		21B907D31B98316300666D28 /* AllocationTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D21B98316300666D28 /* AllocationTracker.cpp */; };
 		21B907D61B98516200666D28 /* NSObject+POSAllocationTracker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D51B98516200666D28 /* NSObject+POSAllocationTracker.mm */; };
-		21B907D81B9882C000666D28 /* POSAllocationTrackerTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D71B9882C000666D28 /* POSAllocationTrackerTests.mm */; };
+		21B907D81B9882C000666D28 /* POSAllocationTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D71B9882C000666D28 /* POSAllocationTrackerTests.m */; };
 		21B907DB1B98834400666D28 /* POSAllocationTracker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21B907DA1B98834400666D28 /* POSAllocationTracker.mm */; };
 		21B907DC1B98966A00666D28 /* AllocationTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D21B98316300666D28 /* AllocationTracker.cpp */; };
 		21B907DD1B98967600666D28 /* NSObject+POSAllocationTracker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21B907D51B98516200666D28 /* NSObject+POSAllocationTracker.mm */; };
@@ -36,7 +36,7 @@
 		21B907D21B98316300666D28 /* AllocationTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AllocationTracker.cpp; sourceTree = "<group>"; };
 		21B907D41B98516200666D28 /* NSObject+POSAllocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+POSAllocationTracker.h"; sourceTree = "<group>"; };
 		21B907D51B98516200666D28 /* NSObject+POSAllocationTracker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+POSAllocationTracker.mm"; sourceTree = "<group>"; };
-		21B907D71B9882C000666D28 /* POSAllocationTrackerTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = POSAllocationTrackerTests.mm; sourceTree = "<group>"; };
+		21B907D71B9882C000666D28 /* POSAllocationTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAllocationTrackerTests.m; sourceTree = "<group>"; };
 		21B907D91B98834400666D28 /* POSAllocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAllocationTracker.h; sourceTree = "<group>"; };
 		21B907DA1B98834400666D28 /* POSAllocationTracker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = POSAllocationTracker.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 		21B907C61B982FBC00666D28 /* POSAllocationTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				21B907D71B9882C000666D28 /* POSAllocationTrackerTests.mm */,
+				21B907D71B9882C000666D28 /* POSAllocationTrackerTests.m */,
 				21B907C71B982FBC00666D28 /* Supporting Files */,
 			);
 			path = POSAllocationTrackerTests;
@@ -206,7 +206,7 @@
 			files = (
 				21B907DD1B98967600666D28 /* NSObject+POSAllocationTracker.mm in Sources */,
 				21B907DC1B98966A00666D28 /* AllocationTracker.cpp in Sources */,
-				21B907D81B9882C000666D28 /* POSAllocationTrackerTests.mm in Sources */,
+				21B907D81B9882C000666D28 /* POSAllocationTrackerTests.m in Sources */,
 				21B907DE1B98967A00666D28 /* POSAllocationTracker.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
