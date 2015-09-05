@@ -10,6 +10,10 @@
 
 @interface POSAllocationTracker : NSObject
 
+#ifdef DEBUG
 + (uint64_t)instanceCountForClass:(Class)aClass;
+#endif
 
 @end
+
+
