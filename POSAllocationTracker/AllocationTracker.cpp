@@ -11,14 +11,14 @@
 
 namespace pos {
 
+static AllocationTracker *g_tracker = nullptr;
+
+void AllocationTracker::initialize() {
+    g_tracker = new AllocationTracker();
+}
+
 AllocationTracker &AllocationTracker::tracker() {
-    // This is thread safe in C++11 according to section 6.7:
-    // "If control enters the declaration concurrently while
-    // the object is being initialized, the concurrent execution
-    // waits for completion of the initialization."
-    // http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm#LocalDecl
-    static AllocationTracker tracker;
-    return tracker;
+    return *g_tracker;
 }
 
 AllocationTracker::AllocationTracker() {}

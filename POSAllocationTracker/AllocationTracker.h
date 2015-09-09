@@ -26,6 +26,7 @@ public:
     AllocationTracker(const AllocationTracker&) = delete;
     AllocationTracker& operator=(const AllocationTracker&) = delete;
     
+    static void initialize();
     static AllocationTracker &tracker();
     
     uint64_t instanceCountForClass(Class aClass);
