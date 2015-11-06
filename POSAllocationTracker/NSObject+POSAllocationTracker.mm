@@ -16,6 +16,7 @@ inline void POSSwapSelectors(Class aClass, SEL originalSelector, SEL trackingSel
     Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
     assert(originalMethod != NULL);
     Method trackingMethod = class_getInstanceMethod(aClass, trackingSelector);
+    assert(trackingMethod != NULL);
     method_exchangeImplementations(originalMethod, trackingMethod);
 }
 
@@ -28,9 +29,8 @@ inline void POSSwapSelectors(Class aClass, SEL originalSelector, SEL trackingSel
 }
 
 - (instancetype)pos_trackingInit {
-    id object = [self pos_trackingInit];
     pos::AllocationTracker::tracker().incrementInstanceCountForClass([self class]);
-    return object;
+    return [self pos_trackingInit];;
 }
 
 - (void)pos_trackingDealloc {
