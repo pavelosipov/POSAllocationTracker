@@ -12,6 +12,7 @@
 
 #ifdef DEBUG
 + (uint64_t)instanceCountForClass:(Class)aClass;
++ (void)resetAllCounters;
 #endif
 
 @end

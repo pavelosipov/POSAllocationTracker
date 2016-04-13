@@ -32,6 +32,8 @@ public:
     uint64_t instanceCountForClass(Class aClass);
     void incrementInstanceCountForClass(Class aClass);
     void decrementInstanceCountForClass(Class aCls);
+    
+    void resetAllCounters();
         
 private:
     AllocationTracker();

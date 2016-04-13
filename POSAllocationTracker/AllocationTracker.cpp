@@ -44,5 +44,10 @@ void AllocationTracker::decrementInstanceCountForClass(Class aClass) {
         --snapshotEntry->second;
     }
 }
+    
+void AllocationTracker::resetAllCounters() {
+    std::lock_guard<std::mutex> lock(snapshotMutex_);
+    snapshot_.clear();
+}
 
 }

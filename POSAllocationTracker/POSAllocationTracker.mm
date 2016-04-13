@@ -17,4 +17,8 @@
     return pos::AllocationTracker::tracker().instanceCountForClass(aClass);
 }
 
++ (void)resetAllCounters {
+    pos::AllocationTracker::tracker().resetAllCounters();
+}
+
 @end

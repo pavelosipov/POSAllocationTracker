@@ -30,4 +30,12 @@
     XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 0);
 }
 
+- (void)testResetAllCounters {
+    XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 0);
+    __unused Dummy *dummy = [Dummy new];
+    XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 1);
+    [POSAllocationTracker resetAllCounters];
+    XCTAssert([POSAllocationTracker instanceCountForClass:Dummy.class] == 0);
+}
+
 @end
