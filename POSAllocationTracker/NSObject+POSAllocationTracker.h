@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Pavel Osipov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "POSAllocationTrackerConfig.h"
 
-#ifdef DEBUG
+#if POS_ENABLE_RUNTIME_CHECKS
 
 @interface NSObject (POSAllocationTracker)
 @end

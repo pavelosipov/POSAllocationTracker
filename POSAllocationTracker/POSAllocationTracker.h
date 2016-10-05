@@ -10,7 +10,7 @@
 
 @interface POSAllocationTracker : NSObject
 
-#ifdef DEBUG
+#if POS_ENABLE_RUNTIME_CHECKS
 + (uint64_t)instanceCountForClass:(Class)aClass;
 + (void)resetAllCounters;
 #endif

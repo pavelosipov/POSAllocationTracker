@@ -10,7 +10,7 @@
 #import "AllocationTracker.h"
 #import <objc/runtime.h>
 
-#ifdef DEBUG
+#if POS_ENABLE_RUNTIME_CHECKS
 
 inline void POSSwapSelectors(Class aClass, SEL originalSelector, SEL trackingSelector) {
     Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
