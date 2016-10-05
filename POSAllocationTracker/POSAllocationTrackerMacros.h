@@ -13,3 +13,9 @@
 #       define POS_ENABLE_RUNTIME_CHECKS 1
 #   endif
 #endif
+
+#if POS_ENABLE_RUNTIME_CHECKS
+#   define POS_RUNTIME_CHECK(condition) NSParameterAssert((condition))
+#else
+#   define POS_RUNTIME_CHECK(condition)
+#endif

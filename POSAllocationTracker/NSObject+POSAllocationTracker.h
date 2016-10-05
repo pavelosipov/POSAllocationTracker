@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Pavel Osipov. All rights reserved.
 //
 
-#import "POSAllocationTrackerConfig.h"
+#import "POSAllocationTrackerMacros.h"
 
 #if POS_ENABLE_RUNTIME_CHECKS
 

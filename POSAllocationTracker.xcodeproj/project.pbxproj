@@ -29,7 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		217B9C1A1DA50BE700837570 /* POSAllocationTrackerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAllocationTrackerConfig.h; sourceTree = "<group>"; };
+		217B9C1A1DA50BE700837570 /* POSAllocationTrackerMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAllocationTrackerMacros.h; sourceTree = "<group>"; };
 		21B907B71B982FBC00666D28 /* libPOSAllocationTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPOSAllocationTracker.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B907C21B982FBC00666D28 /* POSAllocationTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSAllocationTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B907C81B982FBC00666D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			children = (
 				21B907D91B98834400666D28 /* POSAllocationTracker.h */,
 				21B907DA1B98834400666D28 /* POSAllocationTracker.mm */,
-				217B9C1A1DA50BE700837570 /* POSAllocationTrackerConfig.h */,
+				217B9C1A1DA50BE700837570 /* POSAllocationTrackerMacros.h */,
 				21B907D41B98516200666D28 /* NSObject+POSAllocationTracker.h */,
 				21B907D51B98516200666D28 /* NSObject+POSAllocationTracker.mm */,
 				21B907D11B98311500666D28 /* AllocationTracker.h */,
