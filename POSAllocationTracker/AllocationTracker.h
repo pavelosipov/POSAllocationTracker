@@ -8,7 +8,6 @@
 
 #pragma once
 
-#include <atomic>
 #include <mutex>
 #include <unordered_map>
 #include <objc/runtime.h>
