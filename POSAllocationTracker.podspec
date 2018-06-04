@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'POSAllocationTracker'
-  s.version      = '1.3.0'
+  s.version      = '1.3.1'
   s.license      = 'MIT'
   s.summary      = 'Simple utility for runtime tracking instances of interested classes.'
   s.homepage     = 'https://github.com/pavelosipov/POSAllocationTracker'

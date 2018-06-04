@@ -24,8 +24,10 @@ inline void POSSwapSelectors(Class aClass, SEL originalSelector, SEL trackingSel
 
 + (void)load {
     pos::AllocationTracker::initialize();
-    POSSwapSelectors(self, @selector(init), @selector(pos_trackingInit));
-    POSSwapSelectors(self, sel_getUid("dealloc"), @selector(pos_trackingDealloc));
+    if (strcmp("NSObject", class_getName(self)) == 0) {
+        POSSwapSelectors(self, @selector(init), @selector(pos_trackingInit));
+        POSSwapSelectors(self, sel_getUid("dealloc"), @selector(pos_trackingDealloc));
+    }
 }
 
 - (instancetype)pos_trackingInit {
